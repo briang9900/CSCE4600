@@ -10,8 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	//"github.com/olekukonko/tablewriter"
-	"C:\Users\brian\Desktop\proj14600\CSCE4600\Project1"
+	"github.com/olekukonko/tablewriter"
 )
 
 func main() {
