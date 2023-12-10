@@ -3,18 +3,19 @@ package builtins
 import (
 	"errors"
 	"fmt"
-	"strings"
+	"os"
 )
 
 var (
-	ErrInvalidArgEcho = errors.New("invalid argument count for Echo")
+	ErrInvalidArgPwd = errors.New("invalid argument count for Pwd")
 )
 
-// Echo prints arguments to the standard output.
-func Echo(args ...string) error {
-	if len(args) < 1 {
-		return ErrInvalidArgEcho
+// Pwd displays the current working directory.
+func Pwd() error {
+	wd, err := os.Getwd()
+	if err != nil {
+		return err
 	}
-	fmt.Println(strings.Join(args, " "))
+	fmt.Println(wd)
 	return nil
 }
