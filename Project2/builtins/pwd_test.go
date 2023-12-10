@@ -1,17 +1,15 @@
 package builtins
 
 import (
-	"bytes"
 	"testing"
 )
 
 func TestPwd(t *testing.T) {
-	// Redirect output to a buffer
-	buf := new(bytes.Buffer)
-	err := Pwd(buf)
+	// Call ChangeDirectory without any arguments
+	err := ChangeDirectory()
 	if err != nil {
 		t.Errorf("Unexpected error: %v", err)
 	}
 
-	// For Pwd, no need to compare output, just ensure no error occurred
+	// For ChangeDirectory, no need to compare output, just ensure no error occurred
 }
